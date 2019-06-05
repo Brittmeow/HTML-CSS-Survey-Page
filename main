@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html>
 <style>
-
+  <!-- container for flex grid is the form -->
+  .container{
+    display: grid;
+    padding-left:20vw;
+    padding-right: 20vw;
+    <!-- adds 20px of space between the columns -->
+    grid-column-gap:20px;
+    <!-- adds 5px of space between the rows -->
+    grid-row-gap:5px;
+  }
+    .text{
+    <!-- sets the text to be in the left column (vertical line 1 to 2 of 3 total) -->
+    grid-column: 1/2;
+    <!-- aligns the text to the end/right of the column -->
+    justify-self: end;
+    <!-- aligns the text on the right -->
+      text-align: right;
+  }
+  .input{
+    <!-- inputs (text boxes, dropdown menu, radio buttons, checkboxes) are in the right colum -->
+    grid-column: 2/3;
+    <!-- aligns the inputs on the left end of the column -->
+    justify-self: start;
+    <!-- centers vertically -->
+    align-self: center;
+    text-align: left;
+    padding: 5px;
+    <!-- adjust width of input boxes -->
+    min-width: 250px;
+  }
+  #description{
+    <!-- stretches the description across both columns -->
+    grid-column:1/3;
+  }
   #main{
+    <!-- centers the elements -->
     margin: auto;
     padding: 10px;
+    <!-- centers the text -->
     text-align: center;
     background: rgb(34,139,34);
     color: white;
   }
   #survey-form{
-    display: block;
-    margin: auto;
     background: white;
     border-radius: 25px;
     padding-top: 10px;
@@ -33,27 +66,11 @@
     border-radius: 15px;
     margin: auto;
   }
-  .column {
-  float: left;
-  width: 50%;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
- padding: 5px;
-}
-  .text{
-    display: block;
-    text-align: right;
-    padding-right: 15px;
-  }
-  .input{
-    display:block;
-    text-align: left;
-  }
+
   #button-container{
     padding: 10px;
+    grid-column: 1/3;
+    justify-self: center;
   }
 </style>
   
@@ -61,88 +78,54 @@
 
 <h1 id="title">House Plant Survey</h1>
 
-<form id="survey-form">
+<form id="survey-form" class="container">
  
-<p id="description" style="font-size:20px;">Tell us about yourself and your experience with plants.</p>
+<p id="description" style="font-size:20px;">Tell me about yourself and your experience with plants:</p>
   
-<div class="row">
-  <div class="column">
     <label class="text" id="name-label">Name:</label>
-  </div>
-  <div class="column">
     <input class="input" type="text" id="name" placeholder="Enter your name" required>  
-  </div>
-</div>
-  
-<div class="row">
-  <div class="column">
-    <label class="text" id="email-label">Email: </label>
-  </div>
-  <div class="column">
-    <input class="input" type="text" id="email" placeholder="Enter your email" required></div>
-</div>
-  
-<div class="row">
-  <div class="column">
-    <label class="text" id="number-label">Phone number: </label>
-  </div>
-  <div class="column">
-    <input type="text" id="number" class="input" placeholder="Enter your phone number" required>
-  </div>
-</div>
 
-<div class="row">
-  <div class="column"><label id="dropdown-label" class="text">Select your level of experience with houseplants:</label> </div>
-  <div class="column">
+    <label class="text" id="email-label">Email: </label>
+    <input class="input" type="email" id="email" placeholder="Enter your email" required>
+ 
+    <label class="text" id="number-label">Phone number: </label>
+    <input type="number" id="number" class="input"  placeholder="Enter your phone number" required>
+
+  <label id="dropdown-label" class="text">Select your level of experience with houseplants:</label> 
     <select name="experience-level" class="input">
 <option value="beginner" class="input">Plant beginner</option>
 <option value="enthusiast" class="input">Plant enthusiast</option>
 <option value="expert" class="input">Plant expert</option>
 </select>
-  </div>
-</div>
-  
-<div class="row">
-  <div class="column">
-   <label id="radio-label" class="text">How many plants do you currently have?</label>
-  </div>
-  <div class="column">
-<p class="input"><input type="radio" name="number-plants" >0</p>
+
+<label id="radio-label" class="text">How many plants do you currently have?</label>
+<div class="input">
+  <p><input type="radio" name="number-plants" >0</p>
     
-<p class="input"><input type="radio" name="number-plants" >1-5</p>
+<p ><input type="radio" name="number-plants" >1-5</p>
 
-<p class="input"><input type="radio" name="number-plants">6-15</p>
+<p ><input type="radio" name="number-plants">6-15</p>
 
-<p class="input"><input type="radio" name="number-plants">16+</p>
-
+<p ><input type="radio" name="number-plants">16+</p>
   </div>
-</div>  
-
-<div class="row">
-  <div class="column">
-    <label id="checkbox-label" class="text">Which of the following common house plants do you currently have?</label>
-  </div>
-  <div class="column">
-    <p class="input"><input type="checkbox" name="plant" id="snake-plant" value="Snake Plant"> Snake Plant</p>
-    <p  class="input"><input type="checkbox" name="plant" id="jade-plant" value="Jade Plant"> Jade Plant</p>
-    <p class="input"><input type="checkbox" name="plant" id="spider-plant" value="spider-plant"> Spider Plant</p>
-    <p class="input"><input type="checkbox" name="plant" id="aloe-vera" value="Aloe Vera"> Aloe Vera</p>
-    <p class="input"><input type="checkbox" name="plant" id="peace-lily" value="Peace Lily"> Peace Lily</p>
-    <p class="input"><input type="checkbox" name="plant" id="rubber-plant" value="rubber-plant"> Rubber Plant</p>
-  </div>
-</div> 
   
-<div class="row">
-  <div class="column">
-    <label id="comments-label" class="text">Enter any additional comments below: </label>
+
+    <label id="checkbox-label" class="text">Which of the following common house plants do you currently have?</label>
+  <div class="input">
+    <p><input type="checkbox" name="plant" id="snake-plant" value="Snake Plant"> Snake Plant</p>
+    <p><input type="checkbox" name="plant" id="jade-plant" value="Jade Plant"> Jade Plant</p>
+    <p><input type="checkbox" name="plant" id="spider-plant" value="spider-plant"> Spider Plant</p>
+    <p><input type="checkbox" name="plant" id="aloe-vera" value="Aloe Vera"> Aloe Vera</p>
+    <p><input type="checkbox" name="plant" id="peace-lily" value="Peace Lily"> Peace Lily</p>
+    <p><input type="checkbox" name="plant" id="rubber-plant" value="rubber-plant"> Rubber Plant</p>
   </div>
-  <div class="column">
-    <input id="comments" class="input" placeholder="Enter your comments here">
-  </div>
-</div>    
+
+
+    <div id="comments-label" class="text">Enter any additional comments below: </div>
+  <input id="comments" class="input" placeholder="Enter your comments here">
+   
 <div id="button-container">
-<button type="submit" id="submit-button">Submit</button>                    
-</div>
+<button type="submit" id="submit-button">Submit</button>                    </div>
 
 </form>
 
