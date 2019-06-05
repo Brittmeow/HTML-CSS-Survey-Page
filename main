@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+  #main{
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    background: rgb(34,139,34);
+    color: white;
+  }
+  #survey-form{
+    display: block;
+    margin: auto;
+    background: white;
+    border-radius: 25px;
+    padding-top: 10px;
+    padding: 10px;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    color: rgb(34,139,34);
+  }
+  #comments{
+    width: 30vw;
+    height: 50px;
+    text-align: left;
+  }
+  #submit-button{
+    display: block;
+    background: rgb(34,139,34);
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin: auto;
+  }
+  .column {
+  float: left;
+  width: 50%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+ padding: 5px;
+}
+  .text{
+    display: block;
+    text-align: right;
+    padding-right: 15px;
+  }
+  .input{
+    display:block;
+    text-align: left;
+  }
+  #button-container{
+    padding: 10px;
+  }
+</style>
+  
+<body id="main">
+
+<h1 id="title">House Plant Survey</h1>
+
+<form id="survey-form">
+ 
+<p id="description" style="font-size:20px;">Tell us about yourself and your experience with plants.</p>
+  
+<div class="row">
+  <div class="column">
+    <label class="text" id="name-label">Name:</label>
+  </div>
+  <div class="column">
+    <input class="input" type="text" id="name" placeholder="Enter your name" required>  
+  </div>
+</div>
+  
+<div class="row">
+  <div class="column">
+    <label class="text" id="email-label">Email: </label>
+  </div>
+  <div class="column">
+    <input class="input" type="text" id="email" placeholder="Enter your email" required></div>
+</div>
+  
+<div class="row">
+  <div class="column">
+    <label class="text" id="number-label">Phone number: </label>
+  </div>
+  <div class="column">
+    <input type="text" id="number" class="input" placeholder="Enter your phone number" required>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column"><label id="dropdown-label" class="text">Select your level of experience with houseplants:</label> </div>
+  <div class="column">
+    <select name="experience-level" class="input">
+<option value="beginner" class="input">Plant beginner</option>
+<option value="enthusiast" class="input">Plant enthusiast</option>
+<option value="expert" class="input">Plant expert</option>
+</select>
+  </div>
+</div>
+  
+<div class="row">
+  <div class="column">
+   <label id="radio-label" class="text">How many plants do you currently have?</label>
+  </div>
+  <div class="column">
+<p class="input"><input type="radio" name="number-plants" >0</p>
+    
+<p class="input"><input type="radio" name="number-plants" >1-5</p>
+
+<p class="input"><input type="radio" name="number-plants">6-15</p>
+
+<p class="input"><input type="radio" name="number-plants">16+</p>
+
+  </div>
+</div>  
+
+<div class="row">
+  <div class="column">
+    <label id="checkbox-label" class="text">Which of the following common house plants do you currently have?</label>
+  </div>
+  <div class="column">
+    <p class="input"><input type="checkbox" name="plant" id="snake-plant" value="Snake Plant"> Snake Plant</p>
+    <p  class="input"><input type="checkbox" name="plant" id="jade-plant" value="Jade Plant"> Jade Plant</p>
+    <p class="input"><input type="checkbox" name="plant" id="spider-plant" value="spider-plant"> Spider Plant</p>
+    <p class="input"><input type="checkbox" name="plant" id="aloe-vera" value="Aloe Vera"> Aloe Vera</p>
+    <p class="input"><input type="checkbox" name="plant" id="peace-lily" value="Peace Lily"> Peace Lily</p>
+    <p class="input"><input type="checkbox" name="plant" id="rubber-plant" value="rubber-plant"> Rubber Plant</p>
+  </div>
+</div> 
+  
+<div class="row">
+  <div class="column">
+    <label id="comments-label" class="text">Enter any additional comments below: </label>
+  </div>
+  <div class="column">
+    <input id="comments" class="input" placeholder="Enter your comments here">
+  </div>
+</div>    
+<div id="button-container">
+<button type="submit" id="submit-button">Submit</button>                    
+</div>
+
+</form>
+
+</body>
+</html>
