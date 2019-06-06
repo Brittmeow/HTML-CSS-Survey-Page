@@ -2,4 +2,4 @@
 # https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-survey-form
 
 # The final product can be viewed here:
-# https://codepen.io/Brittmeow/full/BeEdNL
+# https://codepen.io/Brittmeow/full/wbOowE
